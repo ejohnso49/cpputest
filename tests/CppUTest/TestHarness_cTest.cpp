@@ -813,7 +813,7 @@ TEST(TestHarness_c, macros)
     MemoryLeakDetector* memLeakDetector = MemoryLeakWarningPlugin::getGlobalDetector();
     size_t memLeaks = memLeakDetector->totalMemoryLeaks(mem_leak_period_checking);
 #endif
-    void* mem1 = malloc(10);
+    void* mem1 = std::malloc(10);
     void* mem2 = calloc(10, 20);
     void* mem3 = realloc(mem2, 100);
 #if CPPUTEST_USE_MALLOC_MACROS
